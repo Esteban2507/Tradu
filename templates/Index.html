@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traductor Avanzado</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+  <header>
+    <div class="logo">🌐 Traducción precisa y rápida</div>
+    <button id="toggleTheme">🌙</button>
+  </header>
+
+  <main>
+    <div class="translator-container">
+      <!-- Bloque de texto origen -->
+      <div class="text-block">
+        <select id="langSource">
+          <option value="auto">🌐 Detectar idioma</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="en">🇺🇸 Inglés</option>
+          <option value="fr">🇫🇷 Francés</option>
+          <option value="de">🇩🇪 Alemán</option>
+        </select>
+        <textarea id="textoOrigen" placeholder="Escribe aquí..." maxlength="500"></textarea>
+        <div class="counter" id="counterOrigen">0/500</div>
+      </div>
+
+      <!-- Botón swap -->
+      <button id="swapBtn">↔️</button>
+
+      <!-- Bloque de texto destino -->
+      <div class="text-block">
+        <select id="langDest">
+          <option value="en">🇺🇸 Inglés</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="fr">🇫🇷 Francés</option>
+          <option value="de">🇩🇪 Alemán</option>
+        </select>
+        <textarea id="textoDestino" placeholder="Traducción..." readonly></textarea>
+        <div class="counter" id="counterDestino">0/500</div>
+      </div>
+    </div>
+
+    <!-- Controles -->
+    <div class="controls">
+      <button id="translateBtn">Traducir 🔵</button>
+      <button id="clearBtn">Borrar ✖️</button>
+      <button id="copyBtn">Copiar 📋</button>
+      <button id="ttsBtn">Escuchar 🔊</button>
+    </div>
+
+    <!-- Historial -->
+    <div class="history-container" id="history">
+      <h3>Historial</h3>
+      <ul id="historyList"></ul>
+    </div>
+
+    <!-- Sugerencias rápidas -->
+    <div class="suggestions">
+      <h3>Sugerencias rápidas</h3>
+      <button class="suggestion">Hola</button>
+      <button class="suggestion">Gracias</button>
+      <button class="suggestion">¿Dónde está el baño?</button>
+    </div>
+  </main>
+
+  <footer>
+    Procesado por IA
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

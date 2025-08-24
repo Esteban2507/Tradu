@@ -1,0 +1,246 @@
+/* ===================== General ===================== */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F4F4F9;
+  color: #1F1F1F;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #1F1F1F;
+  color: #F4F4F9;
+}
+
+/* ===================== Header ===================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #FF6B6B;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .logo {
+  font-size: 1.2rem;
+}
+
+#toggleTheme {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ===================== Translator Container ===================== */
+.translator-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 900px;
+  margin: 30px auto;
+  position: relative;
+}
+
+/* ===================== Bloques de texto ===================== */
+.text-block {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+body.dark .text-block {
+  background: #2C2C2C;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.text-block textarea {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid #DADADA;
+  border-radius: 8px;
+  padding: 10px;
+  resize: vertical;
+  font-size: 1rem;
+  transition: all 0.2s;
+  background: inherit;
+  color: inherit;
+}
+
+.text-block textarea:focus {
+  border-color: #FF6B6B;
+  box-shadow: 0 0 8px rgba(255,107,107,0.3);
+  outline: none;
+}
+
+.text-block select {
+  border-radius: 8px;
+  padding: 6px 10px;
+  border: 1px solid #DADADA;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: inherit;
+  color: inherit;
+}
+
+/* ===================== Animaciones ===================== */
+textarea.typing {
+  transform: scale(1.02);
+  transition: transform 0.2s;
+}
+
+textarea.swap {
+  transform: rotateY(180deg);
+  transition: transform 0.3s;
+}
+
+textarea.loading {
+  background-color: #FFF3F3;
+  color: #555;
+  transition: background 0.3s;
+}
+
+textarea.translated {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+textarea::placeholder {
+  color: #999;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+/* ===================== Botón Swap ===================== */
+#swapBtn {
+  align-self: center;
+  background: #4ECDC4;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#swapBtn:hover {
+  transform: scale(1.1);
+  background: #38B2AC;
+}
+
+/* ===================== Controles ===================== */
+.controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.controls button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+#translateBtn { background: #FF6B6B; color: white; }
+#translateBtn:hover { opacity: 0.9; transform: scale(1.05); }
+
+#clearBtn, #copyBtn, #ttsBtn { background: #4ECDC4; color: white; }
+#clearBtn:hover, #copyBtn:hover, #ttsBtn:hover { opacity: 0.85; transform: scale(1.05); }
+
+/* ===================== Historial ===================== */
+.history-container {
+  background: #fff;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body.dark .history-container {
+  background: #2C2C2C;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* ===================== Sugerencias ===================== */
+.suggestions button {
+  background: #FFE66D;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  margin: 3px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.suggestions button:hover {
+  background: #FFD93D;
+}
+
+/* ===================== Footer ===================== */
+footer {
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ===================== Responsive ===================== */
+@media screen and (min-width: 768px) {
+  .translator-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .text-block {
+    flex: 1;
+  }
+
+  #swapBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .translator-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #swapBtn {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
