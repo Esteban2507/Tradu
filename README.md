@@ -39,5 +39,6 @@ El sistema utiliza la librería `googletrans` para realizar las traducciones, of
 
 ### 1️⃣ Clonar el Repositorio
 ```bash
-git clone https://github.com/Esteban2507/proyecto-traductor.git
+git clone https://github.com/Esteban2507/tradu.git
 cd proyecto-traductor
+
