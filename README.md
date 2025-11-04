@@ -1,17 +1,43 @@
-# 🌍 Traductor con Flask y Googletrans
+# 🌐 Traductor Multilenguaje con Flask
 
-Este es un proyecto simple de **aplicación web traductora** usando:
-- [Flask](https://flask.palletsprojects.com/) como framework web.
-- [Googletrans](https://py-googletrans.readthedocs.io/en/latest/) para traducir texto.
+## 🧩 Descripción del Proyecto
+Este proyecto es una **API Traductora** desarrollada en **Python (Flask)** con un **frontend moderno en HTML, CSS y JavaScript**, que permite traducir texto entre múltiples idiomas de forma rápida, intuitiva y visualmente atractiva.
+
+El sistema utiliza la librería `googletrans` para realizar las traducciones, ofreciendo una experiencia similar a un traductor profesional, pero con una estética y estructura propias.
 
 ---
 
-## 📌 Instalación
+## 🚀 Funcionalidades Principales
 
-1. Clonar o descargar este repositorio.
-2. Crear un entorno virtual (opcional pero recomendado):
+- Traducción instantánea entre varios idiomas (Español, Inglés, Francés, Alemán, etc.)
+- Detección automática del idioma de origen.
+- Interfaz limpia y moderna con modo oscuro/claro.
+- Contador de caracteres y control de longitud.
+- Botones interactivos:
+  - 🔄 Intercambiar idiomas
+  - 🔊 Escuchar texto (TTS)
+  - 📋 Copiar traducción
+  - ✖️ Borrar texto
+- Historial de traducciones recientes.
+- Sugerencias rápidas (frases comunes).
 
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # En Linux/Mac
-   venv\Scripts\activate      # En Windows
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+| Tipo | Herramienta |
+|------|--------------|
+| Backend | Python 3 + Flask |
+| Traducción | googletrans |
+| Frontend | HTML5, CSS3, JavaScript |
+| Diseño | Flexbox, Animaciones CSS |
+| Entorno | Visual Studio Code |
+
+---
+
+## ⚙️ Instalación y Ejecución
+
+### 1️⃣ Clonar el Repositorio
+```bash
+git clone https://github.com/Esteban2507/proyecto-traductor.git
+cd proyecto-traductor
